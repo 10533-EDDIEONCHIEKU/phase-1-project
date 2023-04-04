@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  
+
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> KAA SERVICE PROVISION CENTER </title>
+<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body><style>
+    body {
+         
+        font-family: Calibri, Helvetica, sans-serif;  
+         background-image: url('https://www.kaa.go.ke/wp-content/uploads/2016/04/JKIA-T115.jpg');
+        background-size: 100% ;
+    }
+    </style>
+    
+<form id= "support">
+
+
+<div align="center">
+
+<h1>WELCOME TO THE KAA SERVICE PROVISION CENTER</h1>
+
+
+Enter your name :
+<input  type="text" name="UserName" id="UserName" size=35 maxlength=35 value="" required></br></br>
+Enter your budge number:
+<input type="text" placeholder="Budge number" name="budge" id="budge" pattern="[0-9]+" required> 
+
+</br></br>
+
+Enter your department:
+<input type="text" name="Deptt" id="Deptt" size=35 maxlength=35 value=""required> </br> </br>
+
+Select If experiencing any of the problems stated:
+
+<select name="issuedescript" id="issuedescript" ><option>
+<option value=1 selected = "true">Network issue
+<option value=2 >Hardware issue
+<option value=3 >Internet Error
+<option value=4 >Ip phone connectivity issue
+<option value=5 >login issue
+
+
+
+Has it occured before?
+
+<input type="radio" name="exe" id="exe" value=1>Yes
+<input type="radio" name="exe" id="exe" value=2>No
+</p>
+How long has it been since the issue began?
+<p>
+
+<input type="checkbox"  name="Aday" id="Aday"> Aday
+<input type="checkbox" name="two_to_fivedays" id="two_to_fivedays">two_to_fivedays
+<input type="checkbox" name="week" id="week"> week
+<input type="checkbox" name="more" id="more">more 
+</p>
+Describe the issue you are experiencing if not in the options above
+<textarea name="Comments" id="Comments" cols=30 rows=4></textarea> </br> </br>
+
+
+Tell us how quick would you want the issue solved
+<select name="timepref" id="timepref"><option>
+<option value=1 selected = "true">ASAP
+<option value=2 >Within the hour
+<option value=3 >
+<option value=4 >
+<option value=5 >
+</select>
+</br></br>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="script.js"></script>
+
+
+
+<input type=submit value="submit">
+</div>
+</form>
+</body>
+</html>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBexV4f4ldF1dm39OxLu43zaZOvwOCuivc",
+    authDomain: "kaa-support-system.firebaseapp.com",
+    databaseURL: "https://kaa-support-system-default-rtdb.firebaseio.com",
+    projectId: "kaa-support-system",
+    storageBucket: "kaa-support-system.appspot.com",
+    messagingSenderId: "221663414803",
+    appId: "1:221663414803:web:0bf67ad884d0621c5a8de6",
+    measurementId: "G-N8RH96DV1R"
+  };
+
+  
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  var messagesRef = firebase.database().ref('messages');
+  document.getElementById('support').addEventListener('submit', submitForm);
+
+  import{
+   getDatabase, set, get, update, remove, ref, child
+  }
+  from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+  const db = getDatabase();
+ 
+</script>
+
+
+
+
+
+
+
+
+
+
